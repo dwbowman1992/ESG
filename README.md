@@ -15,7 +15,7 @@ npm install
 
 npm start
 
-localhost:8080 is where the application is served
+localhost:8080 is where the application is served unless otherwise stated in the webpack output in your terminal after running npm start
 
 -------------------------------------------------------
 
