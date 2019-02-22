@@ -1,0 +1,34 @@
+{
+  "name": "esg",
+  "version": "1.0.0",
+  "description": "Embedded Sound GUI for Third Ear Project",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "react-hot-loader": "^4.7.1",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwbowman1992/ESG.git"
+  },
+  "author": "ThirdEar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwbowman1992/ESG/issues"
+  },
+  "homepage": "https://github.com/dwbowman1992/ESG#readme"
+}
