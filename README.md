@@ -1,7 +1,8 @@
 # ESG
 Embedded Sound GUI for Third Ear Project
 
-GUI Installation--
+GUI Installation --
+
 git clone https://github.com/dwbowman1992/ESG.git --
 
 cd ESG
@@ -14,11 +15,13 @@ npm start
 
 localhost:8080 is where the application is served
 
-For Development--
+For Development --
+
 git checkout development
+
 git checkout -b {YourBranchName}
 
-commit changes--
+commit changes --
 git commit -am "Some commit message"
 
 pushing changes--
