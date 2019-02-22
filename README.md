@@ -15,7 +15,9 @@ npm start
 
 localhost:8080 is where the application is served
 
-For Development --
+-------------------------------------------------------
+
+DEVELOPMENT --
 
 git checkout development
 
