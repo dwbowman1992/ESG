@@ -9,3 +9,15 @@ npm install
 npm start
 
 --localhost:8080 is where the application is served
+
+For Development----
+git checkout development
+git checkout -b {YourBranchName}
+
+-- commit changes
+git commit -am "Some commit message"
+
+-- pushing changes
+git push origin {YourBranchName}
+
+DO NOT push to Development. Go to the repository on github and create a pull request.
