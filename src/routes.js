@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import ApplicationShell from "./components/ApplicationShell";
+import ApplicationShell from "./containers/ApplicationShell/index";
 
 const Routes = history => {
   return (

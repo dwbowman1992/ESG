@@ -1,5 +1,5 @@
 import React from 'react';
-import ApiUtilities from "../containers/api/Apiutilities";
+import ApiUtilities from "../api/Apiutilities";
 
 
 const shell = {
