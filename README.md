@@ -13,7 +13,7 @@ git checkout development
 
 npm install
 
-npm start
+npm run-script dev
 
 localhost:8080 is where the application is served unless otherwise stated in the webpack output in your terminal after running npm start
 
@@ -28,7 +28,7 @@ git checkout -b {YourBranchName}
 commit changes --
 git commit -am "Some commit message"
 
-pushing changes--
+pushing changes --
 git push origin {YourBranchName}
 
 DO NOT push to Development. Go to the repository on github and create a pull request.
