@@ -6,8 +6,8 @@ const shell = {
     border: '1px solid black',
     width: '100vw',
     height: '100vh',
-    maxHeight: '480px',
-    maxWidth: '320px'
+    maxWidth: '480px',
+    maxHeight: '320px'
 };
 
 
