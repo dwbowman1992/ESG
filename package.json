@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Embedded Sound GUI for Third Ear Project",
   "main": "index.js",
+  "engines": {
+    "node": "9.5.0"
+  },
   "dependencies": {
     "core-js": "^2.6.5",
     "history": "^4.7.2",
@@ -31,7 +34,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
     "start": "npm install",
-    "heroku-postbuild": " webpack --config ./webpack.config.js --mode production"
+    "heroku-postbuild": "webpack --config ./webpack.config.js --mode production"
   },
   "repository": {
     "type": "git",
