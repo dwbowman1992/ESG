@@ -30,7 +30,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "start": "npm install && webpack --config ./webpack.config.js --mode production"
+    "start": "npm install",
+    "heroku-postbuild": " webpack --config ./webpack.config.js --mode production"
   },
   "repository": {
     "type": "git",
