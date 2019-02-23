@@ -5,7 +5,7 @@ Embedded Sound GUI for Third Ear Project
 
 GUI Installation --
 
-git clone https://github.com/dwbowman1992/ESG.git --
+git clone https://github.com/dwbowman1992/ESG.git
 
 cd ESG
 
