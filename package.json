@@ -4,8 +4,18 @@
   "description": "Embedded Sound GUI for Third Ear Project",
   "main": "index.js",
   "dependencies": {
+    "core-js": "^2.6.5",
+    "history": "^4.7.2",
+    "prop-types": "^15.7.2",
     "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "react-dom": "^16.8.3",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^4.0.1",
+    "redux-reset": "^0.3.0",
+    "redux-saga": "^1.0.1",
+    "regenerator-runtime": "^0.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
