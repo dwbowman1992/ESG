@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "express": "^4.16.4",
     "history": "^4.7.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
@@ -34,7 +35,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
     "heroku-postbuild": "webpack --config ./webpack.config.js --mode production",
-    "start": "webpack -p"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
