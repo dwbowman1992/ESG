@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import ApiUtilities from './containers/api/Apiutilities';
+import ApplicationShell from "./components/ApplicationShell";
 
 const Routes = history => {
   return (
@@ -12,7 +12,7 @@ const Routes = history => {
           <Route
             exact
             path="/"
-            render={() => (<ApiUtilities />)}
+            render={() => (<ApplicationShell />)}
           />
         </Switch>
       </div>
