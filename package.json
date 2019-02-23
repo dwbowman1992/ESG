@@ -34,7 +34,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
     "start": "npm install",
-    "heroku-postbuild": "webpack --config ./bundle.js --mode production"
+    "heroku-postbuild": "webpack --config ./webpack.config.js --mode production"
   },
   "repository": {
     "type": "git",
