@@ -1,11 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const title = 'Embedded Sound GUI by ThirdEar';
+import ApiUtilities from './api/Apiutilities';
+
+function App() {
+    return (
+        <div>
+            <ApiUtilities/>
+        </div>
+    );
+}
 
 ReactDOM.render(
-    <div>{title}</div>,
+    <App/>,
     document.getElementById('app')
 );
+
 
 module.hot.accept();
