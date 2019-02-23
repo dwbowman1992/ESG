@@ -1,0 +1,50 @@
+{
+  "name": "esg",
+  "version": "0.0.1",
+  "description": "Embedded Sound GUI for Third Ear Project",
+  "main": "index.js",
+  "engines": {
+    "node": "9.5.0"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "express": "^4.16.4",
+    "history": "^4.7.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^4.0.1",
+    "redux-reset": "^0.3.0",
+    "redux-saga": "^1.0.1",
+    "regenerator-runtime": "^0.13.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.2.0",
+    "webpack-cli": "^3.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "react-hot-loader": "^4.7.1",
+    "webpack": "^4.29.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "heroku-postbuild": "webpack --config ./webpack.config.js --mode production",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwbowman1992/ESG.git"
+  },
+  "author": "ThirdEar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwbowman1992/ESG/issues"
+  },
+  "homepage": "https://github.com/dwbowman1992/ESG#readme"
+}
