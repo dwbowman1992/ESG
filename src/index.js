@@ -1,20 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ApiUtilities from './api/Apiutilities';
+import ApplicationShell from './components/ApplicationShell';
+
 
 function App() {
-    return (
-        <div>
-            <ApiUtilities/>
-        </div>
-    );
+    return (<ApplicationShell/>);
 }
 
-ReactDOM.render(
-    <App/>,
-    document.getElementById('app')
-);
-
+ReactDOM.render(<App/>, document.getElementById('app'));
 
 module.hot.accept();

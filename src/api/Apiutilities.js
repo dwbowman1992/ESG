@@ -1,6 +1,7 @@
 import React from 'react';
 
-var url = 'https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=AIzaSyBJV2JWouVd5YLYA4hfy87rFozEzdydSPE&part=snippet,contentDetails,statistics,status';
+var url = 'https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=AIzaSyBJV2JWouVd5YLYA4hfy87rFozEzdydSPE&part=' +
+    'snippet,contentDetails,statistics,status';
 
 
 class ApiUtilities extends React.Component {
@@ -49,9 +50,9 @@ class ApiUtilities extends React.Component {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
             return <div>Loading...</div>;
-        } else {
+        } else if(items.length) {
             return (
-                <ul>
+                <ul style={{margin: '0px'}}>
                     <li>
                         This is a sample API call
                     </li>
@@ -65,6 +66,10 @@ class ApiUtilities extends React.Component {
                     </li>
                 </ul>
             );
+        } else {
+            return (
+                <div>Empty Array of items returned</div>
+            )
         }
     }
 }
