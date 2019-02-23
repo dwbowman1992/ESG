@@ -1,6 +1,6 @@
 {
   "name": "esg",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Embedded Sound GUI for Third Ear Project",
   "main": "index.js",
   "engines": {
