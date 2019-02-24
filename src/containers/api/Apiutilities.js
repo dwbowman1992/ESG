@@ -1,7 +1,6 @@
 import React from 'react';
 
-var url = 'https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=AIzaSyBJV2JWouVd5YLYA4hfy87rFozEzdydSPE&part=' +
-    'snippet,contentDetails,statistics,status';
+var url = 'http://192.168.0.11:8000/tests:';
 
 
 class ApiUtilities extends React.Component {
@@ -57,8 +56,8 @@ class ApiUtilities extends React.Component {
                         This is a sample API call
                     </li>
                     {items.map(item => (
-                        <li key={item.snippet.description}>
-                            This is a sample description being returned: {item.snippet.description}
+                        <li key={item.something}>
+                            This is a sample description being returned: {item.something}
                         </li>
                     ))}
                     <li>
