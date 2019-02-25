@@ -1,0 +1,63 @@
+.iconContainer {
+  position: relative;
+  height: 37rem;
+}
+
+.iconWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 1px solid #fff;
+  border-radius: 50%;
+  width: 10vh;
+  height: 10vh; */
+}
+
+.rotateIcon {
+  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg); /* IE 9 */
+  -webkit-transform: rotate(-45deg); /* Safari 3-8 */
+}
+
+.middleCircle2 {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.middleCircle {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 65%;
+  height: 65%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.outterCircle {
+  margin-top: 20px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.innerCircle {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 35%;
+  height: 35%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
