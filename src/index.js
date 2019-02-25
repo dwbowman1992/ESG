@@ -23,7 +23,7 @@ import 'core-js';
 import React from 'react';
 import { render } from 'react-dom';
 // import 'font-awesome/css/font-awesome.min.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import App from './containers/App';
 

@@ -11,9 +11,10 @@ import reduxReset from 'redux-reset';
 import routes from '../../routes';
 import createReducers from '../../reducers';
 import rootSaga from '../../sagas';
+import './styles.css';
 
 const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) 
+  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
   : compose;
 
 const App = () => {
