@@ -3,16 +3,44 @@ import React from 'react';
 var url = 'http://192.168.0.11:8000/tests:';
 
 
-class ApiUtilities extends React.Component {
+class Api extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             error: null,
             isLoaded: false,
             responseCode: null,
-            items: []
+            items: [
+                {
+                    position: [
+                        {
+                            direction: {
+                                x: "12",
+                                y: "2"
+                            },
+                            magnitude: "10"
+                        },
+                        {
+                            direction: {
+                                x: "14",
+                                y: "2"
+                            },
+                            magnitude: "9"
+                        },
+                        {
+                            direction: {
+                                x: "16",
+                                y: "2"
+                            },
+                            magnitude: "7"
+                        }
+
+                    ]
+                }
+            ]
         };
     }
+
 
     componentDidMount() {
         fetch(url)
@@ -40,24 +68,20 @@ class ApiUtilities extends React.Component {
                         error
                     });
                 }
-            )
+            );
     }
 
     render() {
         const { error, isLoaded, items, responseCode } = this.state;
-        if (error) {
-            return <div>Error: {error.message}</div>;
-        } else if (!isLoaded) {
-            return <div>Loading...</div>;
-        } else if(items.length) {
+        if(items.length) {
             return (
                 <ul style={{margin: '0px'}}>
                     <li>
                         This is a sample API call
                     </li>
                     {items.map(item => (
-                        <li key={item.something}>
-                            This is a sample description being returned: {item.something}
+                        <li>
+                            {item.position[0].direction.x}
                         </li>
                     ))}
                     <li>
@@ -73,4 +97,4 @@ class ApiUtilities extends React.Component {
     }
 }
 
-export default ApiUtilities;
+export default Api;
