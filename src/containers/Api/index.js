@@ -1,100 +1,40 @@
-import React from 'react';
+import React from "react";
 
-var url = 'http://192.168.0.11:8000/tests:';
-
+import { connect } from "react-redux";
 
 class Api extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            error: null,
-            isLoaded: false,
-            responseCode: null,
-            items: [
-                {
-                    position: [
-                        {
-                            direction: {
-                                x: "12",
-                                y: "2"
-                            },
-                            magnitude: "10"
-                        },
-                        {
-                            direction: {
-                                x: "14",
-                                y: "2"
-                            },
-                            magnitude: "9"
-                        },
-                        {
-                            direction: {
-                                x: "16",
-                                y: "2"
-                            },
-                            magnitude: "7"
-                        }
-
-                    ]
-                }
-            ]
-        };
-    }
-
 
     componentDidMount() {
-        fetch(url)
-            .then(
-                (res) => {
-                    this.setState({
-                        responseCode: res.status
-                    });
-                    return res.json();
-                }
-            )
-            .then(
-                (result) => {
-                    this.setState({
-                        isLoaded: true,
-                        items: result.items
-                    });
-                },
-                // Note: it's important to handle errors here
-                // instead of a catch() block so that we don't swallow
-                // exceptions from actual bugs in components.
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error
-                    });
-                }
-            );
+        this.props.onRequestData();
     }
 
     render() {
-        const { error, isLoaded, items, responseCode } = this.state;
-        if(items.length) {
-            return (
-                <ul style={{margin: '0px'}}>
-                    <li>
-                        This is a sample API call
-                    </li>
-                    {items.map(item => (
-                        <li>
-                            {item.position[0].direction.x}
-                        </li>
-                    ))}
-                    <li>
-                        Code Returned: {responseCode}
-                    </li>
-                </ul>
-            );
-        } else {
-            return (
-                <div>Empty Array of items returned</div>
-            )
-        }
+        const { fetching, data, error } = this.props;
+
+        return (
+            <div>
+                {data ? (
+                    <div>
+                        Response from Backend (configuration/mode): "{data.mode}"
+                    </div>
+                ) : null}
+            </div>
+        );
     }
 }
 
-export default Api;
+const mapStateToProps = state => {
+    return {
+        fetching: state.reducer.fetching,
+        data: state.reducer.data,
+        error: state.reducer.error
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onRequestData: () => dispatch({ type: "API_CALL_REQUEST" })
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Api);

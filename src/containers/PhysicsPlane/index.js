@@ -16,7 +16,7 @@ class PhysicsPlane extends React.Component {
             const canvas = document.getElementsByClassName('physicscanvas')[0];
             const ctx = canvas.getContext('2d');
             ctx.moveTo(canvas.width / 2, canvas.height / 2);
-            ctx.lineTo((canvas.width / 2) + 50, 50);
+            ctx.lineTo((canvas.width / 2) + 12, 50);
             ctx.stroke();
             this.state.loaded = true;
         }
