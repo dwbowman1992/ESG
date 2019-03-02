@@ -3,9 +3,15 @@ import React from "react";
 import { connect } from "react-redux";
 
 class Api extends React.Component {
-
     componentDidMount() {
-        this.props.onRequestData();
+        let apiInterval = setInterval(() => {
+            this.props.onRequestData();
+        }, 2000);
+        this.setState({ apiInterval: apiInterval});
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.state.apiInterval);
     }
 
     render() {
@@ -15,9 +21,9 @@ class Api extends React.Component {
             <div>
                 {data ? (
                     <div>
-                        Response from Backend (configuration/mode): "{data.mode}"
+                        Response from Backend (configuration/mode): {data.mode}
                     </div>
-                ) : null}
+                ) : <div>Response from Backend (configuration/mode):</div>}
             </div>
         );
     }
