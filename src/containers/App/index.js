@@ -1,4 +1,3 @@
-import regeneratorRuntime from 'regenerator-runtime'
 import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
@@ -10,7 +9,7 @@ import reduxReset from 'redux-reset';
 
 import routes from '../../routes';
 import createReducers from '../../reducers';
-import rootSaga from '../../sagas';
+import {watcherSaga} from '../../sagas';
 import './styles.css';
 
 const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
@@ -29,7 +28,7 @@ const App = () => {
   const store = createStore(reducers, composeEnhancers(applyMiddleware(...middlewares), reduxReset()));
 
 
-  sagaMiddleware.run(rootSaga);
+  sagaMiddleware.run(watcherSaga);
   // browser history sync with redux store
   return (
     <Provider store={store}>

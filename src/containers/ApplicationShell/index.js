@@ -2,20 +2,21 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
 
-import ApiUtilities from "../api/Apiutilities";
-
+import PhysicsPlane from "../PhysicsPlane";
 
 import './styles.css';
+import Api from "../Api";
 
 class ApplicationShell extends React.Component {
     render() {
         return (
           <div className="col-sm-12">
+              <Api/>
             <div className="col-sm-12 text-center">
               <h1>OutSigned Alert System</h1>
             </div>
             <div className="col-sm-12 iconContainer">
-              <ApiUtilities/>
+                <PhysicsPlane />
                 <div className="outterCircle">
                   <div className="middleCircle">
                     <div className="middleCircle2">
