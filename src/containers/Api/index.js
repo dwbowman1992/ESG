@@ -10,20 +10,32 @@ class Api extends React.Component {
         this.setState({ apiInterval: apiInterval});
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
         clearInterval(this.state.apiInterval);
     }
 
     render() {
         const { fetching, data, error } = this.props;
 
+        if (error) {
+            clearInterval(this.state.apiInterval);
+        }
+
         return (
             <div>
                 {data ? (
                     <div>
-                        Response from Backend (configuration/mode): {data.mode}
+                        RESPONSE from Backend (configuration/mode): {data.mode}
                     </div>
-                ) : <div>Response from Backend (configuration/mode):</div>}
+                ) : null}
+                {error ? (
+                    <div>
+                        ERROR from Backend (configuration/mode): {error.message}
+                    </div>
+                ) : null}
+                {fetching ? (
+                    <div>Fetching Data</div>
+                ) : null}
             </div>
         );
     }
