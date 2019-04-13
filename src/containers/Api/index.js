@@ -4,28 +4,50 @@ import { connect } from "react-redux";
 
 class Api extends React.Component {
     componentDidMount() {
-        let apiInterval = setInterval(() => {
-            this.props.onRequestData();
-        }, 2000);
-        this.setState({ apiInterval: apiInterval});
+        const interval = this.startInterval();
+        this.setState({ apiInterval: interval});
     }
 
     componentWillUnmount() {
+        this.stopInterval();
+    }
+
+    startInterval() {
+        return setInterval(() => {
+            this.props.onRequestData();
+        }, 2000);
+    };
+
+    stopInterval() {
         clearInterval(this.state.apiInterval);
     }
 
     render() {
         const { fetching, data, error } = this.props;
 
+        /*let intervalFlag = false;
+
+        if (fetching || error) {
+            this.stopInterval();
+            intervalFlag = true;
+        }
+
+        if (!fetching && !error && intervalFlag) {
+            // reset interval
+            console.log('resetting interval');
+            this.startInterval();
+            intervalFlag = false;
+        }*/
+
         if (error) {
-            clearInterval(this.state.apiInterval);
+            this.stopInterval();
         }
 
         return (
             <div>
                 {data ? (
                     <div>
-                        RESPONSE from Backend (configuration/mode): {data.mode}
+                        RESPONSE from Backend (configuration/mode): {data}
                     </div>
                 ) : null}
                 {error ? (
@@ -34,7 +56,7 @@ class Api extends React.Component {
                     </div>
                 ) : null}
                 {fetching ? (
-                    <div>Fetching Data</div>
+                    <div>Fetching Data...</div>
                 ) : null}
             </div>
         );
