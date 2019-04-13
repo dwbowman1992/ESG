@@ -28,7 +28,7 @@ class PhysicsPlane extends React.Component {
               ctx.closePath();
               ctx.fill();
               ctx.stroke();
-            })
+            });
             this.state.loaded = true;
         }
     }
