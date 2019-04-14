@@ -12,13 +12,13 @@ class footer extends React.Component {
           <div className="container col-xs-12 footer">
             <div className="row">
               <div className="col-4">
-                <Link className="white" to="/settings"><FontAwesomeIcon icon={faCog} /></Link>
+                <Link to="/settings"><FontAwesomeIcon icon={faCog} /></Link>
               </div>
               <div className="col-4 text-center">
-                <Link className="white" to="/"><FontAwesomeIcon icon={faTachometerAlt} /></Link>
+                <Link to="/"><FontAwesomeIcon icon={faTachometerAlt} /></Link>
               </div>
               <div className="col-4 text-right">
-                <Link className="white" to="/info"><FontAwesomeIcon icon={faInfoCircle} /></Link>
+                <Link to="/info"><FontAwesomeIcon icon={faInfoCircle} /></Link>
               </div>
             </div>
           </div>

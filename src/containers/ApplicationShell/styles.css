@@ -1,5 +1,6 @@
 .iconContainer {
   position: relative;
+  color: black;
 }
 
 .iconWrapper {
@@ -20,7 +21,7 @@
 }
 
 .middleCircle2 {
-  border: 1px solid #fff;
+  border: 1px solid black;
   border-radius: 50%;
   width: 50%;
   height: 50%;
@@ -30,7 +31,7 @@
   transform: translate(-50%, -50%);
 }
 .middleCircle {
-  border: 1px solid #fff;
+  border: 1px solid black;
   border-radius: 50%;
   width: 65%;
   height: 65%;
@@ -41,7 +42,7 @@
 }
 .outterCircle {
   margin-top: 20px;
-  border: 1px solid #fff;
+  border: 1px solid black;
   border-radius: 50%;
   width: 80%;
   height: 80%;
@@ -51,7 +52,7 @@
   transform: translate(-50%, -50%);
 }
 .innerCircle {
-  border: 1px solid #fff;
+  border: 1px solid black;
   border-radius: 50%;
   width: 35%;
   height: 35%;
