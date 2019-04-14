@@ -9,7 +9,7 @@ class Info extends React.Component {
           <div className="container col-sm-12">
             <div className="row">
               <div className="col-sm-12 text-center">
-                <h1>Infomation</h1>
+                <h1>Information</h1>
               </div>
             </div>
           </div>
