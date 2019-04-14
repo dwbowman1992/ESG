@@ -1,6 +1,6 @@
 body {
-  background-color: black;
-  color: #fff;
-  margin-top: 25px !important;
-  height: 100%;
+  background-color: #fff;
+  color: white;
+  max-width: 480px;
+  max-height: 320px !important;
 }

@@ -17,8 +17,8 @@ class MainInformationView extends React.Component {
         this.setState({ apiInterval: interval});
 
         if (!this.state.loaded) {
-            // const dotArr = [{ x: 50, y: 100, size: 5 }, { x: 200, y: 60, size: 10 }, { x: 100, y: 30, size: 4 }];
-            const dotArr = [{x:50, y:30, size: 4}];
+            const dotArr = [{ x: 50, y: 50, size: 4 }, { x: 200, y: 60, size: 4 }, { x: 250, y: 110, size: 4 }];
+            // const dotArr = [{x:50, y:30, size: 4}];
             const canvas = document.getElementsByClassName('physicscanvas')[0];
             const ctx = canvas.getContext('2d');
             // ctx.moveTo(canvas.width / 2, canvas.height / 2);
@@ -62,7 +62,7 @@ class MainInformationView extends React.Component {
         console.log(fetching, data, error);
 
         return (
-            <canvas className="physicscanvas" ref="canvasref" />
+            <canvas className="physicscanvas" ref={this.canvasRef} />
         );
     }
 }

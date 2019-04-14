@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "bb049e4d5dfc6c7b1658";
+/******/ 	var hotCurrentHash = "f4731920928597f068ad";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -5956,7 +5956,7 @@ exports.push([module.i, "/*!\n * Bootstrap v4.3.1 (https://getbootstrap.com/)\n 
 
 exports = module.exports = __webpack_require__(51)(false);
 // Module
-exports.push([module.i, ".physicscanvas {\n    width: 100%;\n    height: 100%;\n    border:1px solid #000000;\n}\n", ""]);
+exports.push([module.i, ".physicscanvas {\n    width: 100%;\n    height: 100%;\n}\n", ""]);
 
 
 
@@ -5966,7 +5966,7 @@ exports.push([module.i, ".physicscanvas {\n    width: 100%;\n    height: 100%;\n
 
 exports = module.exports = __webpack_require__(51)(false);
 // Module
-exports.push([module.i, ".iconContainer {\n  position: relative;\n  height: 37rem;\n}\n\n.iconWrapper {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  /* border: 1px solid #fff;\n  border-radius: 50%;\n  width: 10vh;\n  height: 10vh; */\n}\n\n.rotateIcon {\n  transform: rotate(-45deg);\n  -ms-transform: rotate(-45deg); /* IE 9 */\n  -webkit-transform: rotate(-45deg); /* Safari 3-8 */\n}\n\n.middleCircle2 {\n  border: 1px solid #fff;\n  border-radius: 50%;\n  width: 50%;\n  height: 50%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.middleCircle {\n  border: 1px solid #fff;\n  border-radius: 50%;\n  width: 65%;\n  height: 65%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.outterCircle {\n  margin-top: 20px;\n  border: 1px solid #fff;\n  border-radius: 50%;\n  width: 80%;\n  height: 80%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.innerCircle {\n  border: 1px solid #fff;\n  border-radius: 50%;\n  width: 35%;\n  height: 35%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n", ""]);
+exports.push([module.i, ".iconContainer {\n  position: relative;\n  color: black;\n}\n\n.iconWrapper {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  /* border: 1px solid #fff;\n  border-radius: 50%;\n  width: 10vh;\n  height: 10vh; */\n}\n\n.rotateIcon {\n  transform: rotate(-45deg);\n  -ms-transform: rotate(-45deg); /* IE 9 */\n  -webkit-transform: rotate(-45deg); /* Safari 3-8 */\n}\n\n.middleCircle2 {\n  border: 1px solid black;\n  border-radius: 50%;\n  width: 50%;\n  height: 50%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.middleCircle {\n  border: 1px solid black;\n  border-radius: 50%;\n  width: 65%;\n  height: 65%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.outterCircle {\n  margin-top: 20px;\n  border: 1px solid black;\n  border-radius: 50%;\n  width: 80%;\n  height: 80%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.innerCircle {\n  border: 1px solid black;\n  border-radius: 50%;\n  width: 35%;\n  height: 35%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n", ""]);
 
 
 
@@ -5996,7 +5996,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(51)(false);
 // Module
-exports.push([module.i, ".footer {\n  margin: 0;\n  padding-top: 25px;\n  padding-bottom: 0px;\n  position:fixed;\n  bottom:0;\n  left:0;\n}\n\n.white {\n  color: #fff !important;\n}\n", ""]);
+exports.push([module.i, ".footer {\n  margin: 0;\n  padding-top: 25px;\n  padding-bottom: 0px;\n  position:fixed;\n  bottom:0;\n  left:0;\n}\n", ""]);
 
 
 
@@ -6110,7 +6110,7 @@ module.exports = defaults;
 
 exports = module.exports = __webpack_require__(51)(false);
 // Module
-exports.push([module.i, "body {\n  background-color: black;\n  color: #fff;\n  margin-top: 25px !important;\n  height: 100%;\n}\n", ""]);
+exports.push([module.i, "body {\n  background-color: #fff;\n  color: white;\n  max-width: 480px;\n  max-height: 320px !important;\n}\n", ""]);
 
 
 
@@ -28631,12 +28631,20 @@ function (_React$Component) {
       });
 
       if (!this.state.loaded) {
-        // const dotArr = [{ x: 50, y: 100, size: 5 }, { x: 200, y: 60, size: 10 }, { x: 100, y: 30, size: 4 }];
         var dotArr = [{
           x: 50,
-          y: 30,
+          y: 50,
           size: 4
-        }];
+        }, {
+          x: 200,
+          y: 60,
+          size: 4
+        }, {
+          x: 250,
+          y: 110,
+          size: 4
+        }]; // const dotArr = [{x:50, y:30, size: 4}];
+
         var canvas = document.getElementsByClassName('physicscanvas')[0];
         var ctx = canvas.getContext('2d'); // ctx.moveTo(canvas.width / 2, canvas.height / 2);
         // ctx.lineTo((canvas.width / 2) + 50, 50);
@@ -28690,7 +28698,7 @@ function (_React$Component) {
       console.log(fetching, data, error);
       return react_default.a.createElement("canvas", {
         className: "physicscanvas",
-        ref: "canvasref"
+        ref: this.canvasRef
       });
     }
   }]);
@@ -30074,27 +30082,24 @@ function (_React$Component) {
     // <span>&#176;</span>
     value: function render() {
       return react_default.a.createElement("div", {
-        className: "container col-sm-12 footer"
+        className: "container col-xs-12 footer"
       }, react_default.a.createElement("div", {
         className: "row"
       }, react_default.a.createElement("div", {
-        className: "col-sm"
+        className: "col-4"
       }, react_default.a.createElement(es_Link, {
-        className: "white",
         to: "/settings"
       }, react_default.a.createElement(index_es["a" /* FontAwesomeIcon */], {
         icon: faCog
       }))), react_default.a.createElement("div", {
-        className: "col-sm text-center"
+        className: "col-4 text-center"
       }, react_default.a.createElement(es_Link, {
-        className: "white",
         to: "/"
       }, react_default.a.createElement(index_es["a" /* FontAwesomeIcon */], {
         icon: faTachometerAlt
       }))), react_default.a.createElement("div", {
-        className: "col-sm text-right"
+        className: "col-4 text-right"
       }, react_default.a.createElement(es_Link, {
-        className: "white",
         to: "/info"
       }, react_default.a.createElement(index_es["a" /* FontAwesomeIcon */], {
         icon: faInfoCircle

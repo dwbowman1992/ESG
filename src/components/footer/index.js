@@ -9,16 +9,16 @@ class footer extends React.Component {
     // <span>&#176;</span>
     render() {
         return (
-          <div className="container col-sm-12 footer">
+          <div className="container col-xs-12 footer">
             <div className="row">
-              <div className="col-sm">
-                <Link className="white" to="/settings"><FontAwesomeIcon icon={faCog} /></Link>
+              <div className="col-4">
+                <Link to="/settings"><FontAwesomeIcon icon={faCog} /></Link>
               </div>
-              <div className="col-sm text-center">
-                <Link className="white" to="/"><FontAwesomeIcon icon={faTachometerAlt} /></Link>
+              <div className="col-4 text-center">
+                <Link to="/"><FontAwesomeIcon icon={faTachometerAlt} /></Link>
               </div>
-              <div className="col-sm text-right">
-                <Link className="white" to="/info"><FontAwesomeIcon icon={faInfoCircle} /></Link>
+              <div className="col-4 text-right">
+                <Link to="/info"><FontAwesomeIcon icon={faInfoCircle} /></Link>
               </div>
             </div>
           </div>
