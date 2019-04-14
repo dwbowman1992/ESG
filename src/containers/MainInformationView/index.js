@@ -62,7 +62,7 @@ class MainInformationView extends React.Component {
         console.log(fetching, data, error);
 
         return (
-            <canvas className="physicscanvas" ref="canvasref" />
+            <canvas className="physicscanvas" ref={this.canvasRef} />
         );
     }
 }
