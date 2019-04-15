@@ -2,27 +2,57 @@ import regeneratorRuntime from 'regenerator-runtime';
 import { takeLatest, call, put } from "redux-saga/effects";
 import axios from "axios";
 
-// watcher saga: watches for actions dispatched to the store, starts worker saga
 export function* watcherSaga() {
-    yield takeLatest("API_CALL_REQUEST", workerSaga);
+    yield takeLatest("GET_SOUNDS_REQUEST", workerSaga);
+    yield takeLatest("GET_CONFIGURATION_REQUEST", workerSaga);
 }
 
-// function that makes the api request and returns a Promise for response
-function fetchData() {
-    return axios.get('http://localhost:8000/configuration/');
+function getSounds() {
+    // TODO remove. Only for development
+    return axios.get('http://localhost:8000/sounds/', {
+        timeout: 1000
+    });
+    /*return axios.get('http://192.168.7.2:8081/sounds/', {
+        timeout: 1000
+    });*/
 }
 
-// worker saga: makes the api call when watcher saga sees the action
-function* workerSaga() {
-    try {
-        const response = yield call(fetchData);
-        const data = response.data;
+function getConfiguration() {
+    // TODO remove. Only for development
+    return axios.get('http://localhost:8000/configuration/', {
+        timeout: 1000
+    });
+    /*return axios.get('http://192.168.7.2:8081/configuration/', {
+        timeout: 1000
+    });*/
+}
 
-        // dispatch a success action to the store with the new dog
-        yield put({ type: "API_CALL_SUCCESS", data });
+function* workerSaga(request) {
+    switch (request.type) {
+        case "GET_SOUNDS_REQUEST": {
+            try {
+                const response = yield call(getSounds);
+                const data = response.data;
 
-    } catch (error) {
-        // dispatch a failure action to the store with the error
-        yield put({ type: "API_CALL_FAILURE", error });
+                yield put({ type: "GET_SOUNDS_SUCCESS", data });
+
+            } catch (error) {
+                yield put({ type: "GET_SOUNDS_FAILURE", error });
+            }
+            break;
+        }
+        case "GET_CONFIGURATION_REQUEST": {
+            try {
+                const response = yield call(getConfiguration);
+                const data = response.data;
+
+                yield put({ type: "GET_CONFIGURATION_SUCCESS", data });
+
+            } catch (error) {
+                yield put({ type: "GET_CONFIGURATION_FAILURE", error });
+            }
+            break;
+        }
+        default: break;
     }
 }

@@ -8,6 +8,7 @@ class Info extends React.Component {
         return (
           <div className="container col-sm-12">
             <div className="row">
+<<<<<<< HEAD
               <div className="col-sm-12 text-center text">
                 <h1 class="text">Infomation</h1>
               </div>
@@ -57,6 +58,10 @@ class Info extends React.Component {
               </div>
               <div className="col-sm-12 version">
                 Running verion 1.0
+=======
+              <div className="col-sm-12 text-center">
+                <h1>Information</h1>
+>>>>>>> d41923a240c9bb55547aa2dc0d1ef204267b6103
               </div>
             </div>
           </div>
