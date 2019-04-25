@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
 
 import MainInformationView from "../MainInformationView";
+import Notification from "../../components/Notification";
 
 import './styles.css';
 
@@ -11,6 +12,7 @@ class ApplicationShell extends React.Component {
         return (
           <div className="col-sm-12">
             <div className="col-sm-12 iconContainer">
+                <Notification />
                 <MainInformationView />
                 <div className="outterCircle">
                   <div className="middleCircle">

@@ -8,7 +8,8 @@ class MainInformationView extends React.Component {
         this.canvasref = React.createRef();
         this.state = {
             loaded: false
-        }
+        };
+        this.counter = 0;
     }
 
     componentDidMount() {
@@ -45,7 +46,7 @@ class MainInformationView extends React.Component {
     startInterval() {
         return setInterval(() => {
             this.props.onRequestData();
-        }, 2000);
+        }, 500);
     };
 
     stopInterval() {
@@ -56,10 +57,16 @@ class MainInformationView extends React.Component {
         const { fetching, data, error } = this.props;
 
         if (error) {
+            console.log(error);
             this.stopInterval();
+            console.log(this.counter);
         }
 
         console.log(fetching, data, error);
+
+        if (data) {
+            this.counter += 1;
+        }
 
         return (
             <canvas className="physicscanvas" ref={this.canvasRef} />
