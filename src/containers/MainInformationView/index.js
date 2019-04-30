@@ -7,9 +7,6 @@ class MainInformationView extends React.Component {
         super(props);
         this.canvasref = React.createRef();
         this.degreeResponse = null;
-        this.prevXCoordinate = 0;
-        this.prevYCoordinate = 0;
-        this.prevRadius = null;
         this.dataIncrement = 0;
         this.state = {
             loaded: false
@@ -20,10 +17,7 @@ class MainInformationView extends React.Component {
         const canvas = document.getElementsByClassName('physicscanvas')[0];
         const ctx = canvas.getContext('2d');
         ctx.setTransform(1, 0, 0, 1, 0, 0);
-        ctx.clearRect(0,
-            0,
-            canvas.width,
-            canvas.height);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
     updatePosition() {
@@ -36,7 +30,6 @@ class MainInformationView extends React.Component {
         // const degree = parseInt(this.degreeResponse.data);
         const canvas = document.getElementsByClassName('physicscanvas')[0];
         const ctx = canvas.getContext('2d');
-        let radius = Math.floor(Math.random() * Math.floor(canvas.height / 2));
         const height = canvas.height;
         const width = canvas.width;
         ctx.beginPath();
@@ -44,12 +37,10 @@ class MainInformationView extends React.Component {
         ctx.translate(width / 2, height / 2);
         let degree = this.dataIncrement;
         // let radius = 50;
+        let radius = Math.floor(Math.random() * Math.floor(canvas.height / 2));
         let degreeRadians = degree * Math.PI / 180;
         let xCoordinate = Math.cos(degreeRadians) * radius;
         let yCoordinate = Math.sin(degreeRadians) * radius;
-        this.prevXCoordinate = xCoordinate;
-        this.prevYCoordinate = yCoordinate;
-        this.prevRadius = radius;
         ctx.arc(xCoordinate, (yCoordinate) * -1, 4, 0, 2 * Math.PI);
         ctx.closePath();
         ctx.fill();
@@ -76,6 +67,8 @@ class MainInformationView extends React.Component {
     render() {
 
         const { fetching, data, error } = this.props;
+
+        console.log(fetching, data, error);
 
         if (data) {
             this.resetCanvas();

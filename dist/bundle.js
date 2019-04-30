@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "7e1c66e560b3bd184ace";
+/******/ 	var hotCurrentHash = "a212aed5e5c1bb2d2c04";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -28617,9 +28617,6 @@ function (_React$Component) {
     _this = MainInformationView_possibleConstructorReturn(this, _getPrototypeOf(MainInformationView).call(this, props));
     _this.canvasref = react_default.a.createRef();
     _this.degreeResponse = null;
-    _this.prevXCoordinate = 0;
-    _this.prevYCoordinate = 0;
-    _this.prevRadius = null;
     _this.dataIncrement = 0;
     _this.state = {
       loaded: false
@@ -28648,7 +28645,6 @@ function (_React$Component) {
 
       var canvas = document.getElementsByClassName('physicscanvas')[0];
       var ctx = canvas.getContext('2d');
-      var radius = Math.floor(Math.random() * Math.floor(canvas.height / 2));
       var height = canvas.height;
       var width = canvas.width;
       ctx.beginPath();
@@ -28656,12 +28652,10 @@ function (_React$Component) {
       ctx.translate(width / 2, height / 2);
       var degree = this.dataIncrement; // let radius = 50;
 
+      var radius = Math.floor(Math.random() * Math.floor(canvas.height / 2));
       var degreeRadians = degree * Math.PI / 180;
       var xCoordinate = Math.cos(degreeRadians) * radius;
       var yCoordinate = Math.sin(degreeRadians) * radius;
-      this.prevXCoordinate = xCoordinate;
-      this.prevYCoordinate = yCoordinate;
-      this.prevRadius = radius;
       ctx.arc(xCoordinate, yCoordinate * -1, 4, 0, 2 * Math.PI);
       ctx.closePath();
       ctx.fill();
@@ -28697,6 +28691,7 @@ function (_React$Component) {
           fetching = _this$props.fetching,
           data = _this$props.data,
           error = _this$props.error;
+      console.log(fetching, data, error);
 
       if (data) {
         this.resetCanvas();
@@ -28907,7 +28902,7 @@ function (_React$Component) {
       }, react_default.a.createElement("div", {
         className: "col-sm-12 text-center text"
       }, react_default.a.createElement("h1", {
-        "class": "text"
+        className: "text"
       }, "Infomation"))), react_default.a.createElement("div", {
         className: "row"
       }, react_default.a.createElement("div", {
@@ -28919,9 +28914,9 @@ function (_React$Component) {
       }, react_default.a.createElement("h2", null, "Our Motivation"), react_default.a.createElement("h6", null, "Our motivation is derived from our group\u2019s want to create a product that helps locate sound in environments that would have otherwise been hard to locate given the environmental circumstances."), react_default.a.createElement("h2", null, "Problem Statement"), react_default.a.createElement("h6", null, "The problem we are targeting is that in certain environments critical sounds can be hard to locate. This hinders an individual\u2019s ability to respond accordingly if the need arises. An example of this problem would be for a first responder or security personnel. Being able to locate the source of a sound, say a siren, bullet crack, or cry for help may be the difference between success and failure in highly intense situations. Other use cases may include hazardous work environments, such as working on heavy machinery with hearing protection."))), react_default.a.createElement("div", {
         className: "row"
       }, react_default.a.createElement("div", {
-        "class": "col-sm-12 text"
+        className: "col-sm-12 text"
       }, react_default.a.createElement("h3", null, "Issues?")), react_default.a.createElement("div", {
-        "class": "col-sm-12 text"
+        className: "col-sm-12 text"
       }, react_default.a.createElement("h6", null, "Email us at ThirdEarCo@gmail.com")), react_default.a.createElement("div", {
         className: "col-sm-12 version"
       }, "Running verion 1.0")));
@@ -30741,22 +30736,24 @@ function watcherSaga() {
 
 function getSounds() {
   // TODO remove. Only for development
-  return axios_default.a.get('http://localhost:8000/sounds/', {
-    timeout: 1000
-  });
-  /*return axios.get('http://192.168.7.2:8081/sounds/', {
+
+  /*eturn axios.get('http://localhost:8000/sounds/', {
       timeout: 1000
   });*/
+  return axios_default.a.get('http://192.168.7.2:8081/sounds/', {
+    timeout: 1000
+  });
 }
 
 function getConfiguration() {
   // TODO remove. Only for development
-  return axios_default.a.get('http://localhost:8000/configuration/', {
-    timeout: 1000
-  });
-  /*return axios.get('http://192.168.7.2:8081/configuration/', {
+
+  /*return axios.get('http://localhost:8000/configuration/', {
       timeout: 1000
   });*/
+  return axios_default.a.get('http://192.168.7.2:8081/configuration/', {
+    timeout: 1000
+  });
 }
 
 function workerSaga(request) {
