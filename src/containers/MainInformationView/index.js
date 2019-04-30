@@ -9,7 +9,8 @@ class MainInformationView extends React.Component {
         this.degreeResponse = null;
         this.dataIncrement = 0;
         this.state = {
-            loaded: false
+            loaded: false,
+            apiInterval: null
         }
     }
 
@@ -47,7 +48,7 @@ class MainInformationView extends React.Component {
     }
 
     componentDidMount() {
-        this.startInterval();
+        this.state.apiInterval = this.startInterval();
     }
 
     componentWillUnmount() {
