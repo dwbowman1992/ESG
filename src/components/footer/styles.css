@@ -12,6 +12,8 @@
   background: transparent;
   outline: none !important;
   border: none;
+  margin-top:10px;
+  margin-left:10px;
 }
 
 .xBtn {
