@@ -17,8 +17,8 @@ const Routes = history => {
             path="/"
             render={() => (
               <div>
-                <ApplicationShell />
                 <Footer />
+                <ApplicationShell />
               </div>
             )}
           />
@@ -27,8 +27,8 @@ const Routes = history => {
             path="/settings"
             render={() => (
               <div>
-                <Settings />
                 <Footer />
+                <Settings />
               </div>
             )}
           />
@@ -37,8 +37,8 @@ const Routes = history => {
             path="/info"
             render={() => (
               <div>
-                <Info />
                 <Footer />
+                <Info />
               </div>
             )}
           />
