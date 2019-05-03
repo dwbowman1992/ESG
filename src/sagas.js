@@ -9,7 +9,7 @@ export function* watcherSaga() {
 
 function getSounds() {
     // TODO remove. Only for development
-    /*eturn axios.get('http://localhost:8000/sounds/', {
+    /*return axios.get('http://localhost:8000/sounds/', {
         timeout: 1000
     });*/
     return axios.get('http://192.168.7.2:8081/sounds/', {
