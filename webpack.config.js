@@ -15,6 +15,21 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
+            },
+            {
+                test: /\.ttf$/,
+                use: [
+                    {
+                        loader: 'ttf-loader',
+                        options: {
+                            name: './font/[hash].[ext]',
+                        },
+                    },
+                ]
+            },
+            {
+                test: /\.(png|svg|jpg|gif|woff|eot)$/,
+                use: ['file-loader']
             }
         ]
     },
