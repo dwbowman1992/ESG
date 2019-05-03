@@ -57,7 +57,8 @@ class MainInformationView extends React.Component {
 
     startInterval() {
         return setInterval(() => {
-            this.props.onRequestData();
+            this.props.onSoundsRequestData();
+            // this.props.onDirectionRequestData();
         }, 500);
     };
 
@@ -71,30 +72,32 @@ class MainInformationView extends React.Component {
 
         if(error) {
             this.stopInterval();
-        }
 
-        if(fetching && !this.degreeResponse) {
-            this.stopInterval();
             return (
-                <canvas className="physicscanvas" ref={this.canvasref} />
+                <div>
+                    <canvas className="physicscanvas" ref={this.canvasref} />
+                </div>
             );
         } else {
-            if (data) {
-                if(!this.degreeResponse) {
-                    this.state.apiInterval = this.startInterval();
-                }
-                this.resetCanvas();
-                this.degreeResponse = data;
-                this.updatePosition();
-            }
-
-            if (error) {
+            if(fetching && !this.degreeResponse) {
                 this.stopInterval();
-            }
+                return (
+                    <canvas className="physicscanvas" ref={this.canvasref} />
+                );
+            } else {
+                if (data) {
+                    if(!this.degreeResponse) {
+                        this.state.apiInterval = this.startInterval();
+                    }
+                    this.resetCanvas();
+                    this.degreeResponse = data;
+                    this.updatePosition();
+                }
 
-            return (
-                <canvas className="physicscanvas" ref={this.canvasref} />
-            );
+                return (
+                    <canvas className="physicscanvas" ref={this.canvasref} />
+                );
+            }
         }
     }
 }
@@ -109,7 +112,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onRequestData: () => dispatch({ type: "GET_SOUNDS_REQUEST" })
+        onSoundsRequestData: () => dispatch({ type: "GET_SOUNDS_REQUEST" }),
+        onDirectionRequestData: () => dispatch({ type: "GET_DIRECTION_REQUEST" })
     };
 };
 
