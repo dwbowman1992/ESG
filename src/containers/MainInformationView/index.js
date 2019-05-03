@@ -57,13 +57,11 @@ class MainInformationView extends React.Component {
 
     startInterval() {
         return setInterval(() => {
-            console.log(this.state.apiInterval);
             this.props.onRequestData();
         }, 500);
     };
 
     stopInterval() {
-        console.log('here');
         clearInterval(this.state.apiInterval);
     }
 
@@ -71,15 +69,20 @@ class MainInformationView extends React.Component {
 
         const { fetching, data, error } = this.props;
 
-        if(fetching && ! this.degreeResponse) {
-            console.log('fetching and no response');
+        if(error) {
+            this.stopInterval();
+        }
+
+        if(fetching && !this.degreeResponse) {
             this.stopInterval();
             return (
                 <canvas className="physicscanvas" ref={this.canvasref} />
             );
         } else {
-            console.log(fetching, data, error);
             if (data) {
+                if(!this.degreeResponse) {
+                    this.state.apiInterval = this.startInterval();
+                }
                 this.resetCanvas();
                 this.degreeResponse = data;
                 this.updatePosition();
