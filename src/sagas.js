@@ -3,63 +3,41 @@ import { takeLatest, call, put } from "redux-saga/effects";
 import axios from "axios";
 
 export function* watcherSaga() {
-    yield takeLatest("GET_SOUNDS_REQUEST", workerSaga);
+    yield takeLatest("GET_SOUND_REQUEST", workerSaga);
     yield takeLatest("GET_CONFIGURATION_REQUEST", workerSaga);
-    yield takeLatest("GET_DIRECTION_REQUEST", workerSaga);
 }
 
-function getSounds() {
+function getSound() {
     // TODO remove. Only for development
-    /*return axios.get('http://localhost:8000/sounds/', {
+    /*return axios.get('http://localhost:8000/sound/', {
         timeout: 1000
     });*/
-    return axios.get('http://192.168.7.2:8081/sounds/', {
+    return axios.get('http://192.168.7.2:8081/sound/', {
         timeout: 1000
     });
-}
-
-function getDirection() {
-    // TODO remove. Only for development
-    return axios.get('http://localhost:8000/direction/', {
-        timeout: 1000
-    });
-    /*return axios.get('http://192.168.7.2:8081/direction/', {
-        timeout: 1000
-    });*/
 }
 
 function getConfiguration() {
     // TODO remove. Only for development
-    return axios.get('http://localhost:8000/configuration/', {
-        timeout: 1000
-    });
-    /*return axios.get('http://192.168.7.2:8081/configuration/', {
+    /*return axios.get('http://localhost:8000/configuration/', {
         timeout: 1000
     });*/
+    return axios.get('http://192.168.7.2:8081/configuration/', {
+        timeout: 1000
+    });
 }
 
 function* workerSaga(request) {
     switch (request.type) {
-        case "GET_SOUNDS_REQUEST": {
+        case "GET_SOUND_REQUEST": {
             try {
-                const response = yield call(getSounds);
+                const response = yield call(getSound);
                 const data = response.data;
 
-                yield put({ type: "GET_SOUNDS_SUCCESS", data });
+                yield put({ type: "GET_SOUND_SUCCESS", data });
 
             } catch (error) {
-                yield put({ type: "GET_SOUNDS_FAILURE", error });
-            }
-            break;
-        }
-        case "GET_DIRECTION_REQUEST": {
-            try {
-                const response = yield call(getDirection);
-                const data = response.data;
-
-                yield put({ type: "GET_DIRECTION_SUCCESS", data });
-            } catch (error) {
-                yield put({ type: "GET_DIRECTION_FAILURE", error });
+                yield put({ type: "GET_SOUND_FAILURE", error });
             }
             break;
         }
