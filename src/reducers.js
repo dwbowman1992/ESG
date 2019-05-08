@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 
-const GET_SOUNDS_REQUEST = "GET_SOUNDS_REQUEST";
-const GET_SOUNDS_SUCCESS = "GET_SOUNDS_SUCCESS";
-const GET_SOUNDS_FAILURE = "GET_SOUNDS_FAILURE";
+const GET_SOUND_REQUEST = "GET_SOUND_REQUEST";
+const GET_SOUND_SUCCESS = "GET_SOUND_SUCCESS";
+const GET_SOUND_FAILURE = "GET_SOUND_FAILURE";
 
 const GET_DIRECTION_REQUEST = "GET_DIRECTION_REQUEST";
 const GET_DIRECTION_SUCCESS = "GET_DIRECTION_SUCCESS";
@@ -16,11 +16,11 @@ const initialState = {
 
 export function reducer(state = initialState, action) {
     switch (action.type) {
-        case GET_SOUNDS_REQUEST:
+        case GET_SOUND_REQUEST:
             return { ...state, fetching: true, error: null, data: null} ;
-        case GET_SOUNDS_SUCCESS:
+        case GET_SOUND_SUCCESS:
             return { ...state, fetching: false, data: action.data };
-        case GET_SOUNDS_FAILURE:
+        case GET_SOUND_FAILURE:
             return { ...state, fetching: false, data: null, error: action.error };
         case GET_DIRECTION_REQUEST:
             return { ...state, fetching: true, error: null, data: null} ;
