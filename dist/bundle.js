@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "ad2fcb96403c020d6626";
+/******/ 	var hotCurrentHash = "2bf50fd3e857ca77e999";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -33102,7 +33102,7 @@ function watcherSaga() {
 function getSound() {
   // TODO remove. Only for development
 
-  /*return axios.get('http://localhost:8000/sound/', {
+  /*return axios.get('http://localhost:8000/sounds/', {
       timeout: 1000
   });*/
   return axios_default.a.get('http://192.168.7.2:8081/sound/', {
