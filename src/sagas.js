@@ -9,22 +9,22 @@ export function* watcherSaga() {
 
 function getSound() {
     // TODO remove. Only for development
-    /*return axios.get('http://localhost:8000/sounds/', {
-        timeout: 1000
-    });*/
-    return axios.get('http://192.168.7.2:8081/sound/', {
+    return axios.get('http://localhost:8000/sounds/', {
         timeout: 1000
     });
+    // return axios.get('http://192.168.7.2:8081/sound/', {
+    //     timeout: 1000
+    // });
 }
 
 function getConfiguration() {
     // TODO remove. Only for development
-    /*return axios.get('http://localhost:8000/configuration/', {
-        timeout: 1000
-    });*/
-    return axios.get('http://192.168.7.2:8081/configuration/', {
+    return axios.get('http://localhost:8000/configuration/', {
         timeout: 1000
     });
+    // return axios.get('http://192.168.7.2:8081/configuration/', {
+    //     timeout: 1000
+    // });
 }
 
 function* workerSaga(request) {

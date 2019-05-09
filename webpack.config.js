@@ -11,10 +11,22 @@ module.exports = {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
+            // {
+            //     test: /\.(js|jsx)$/,
+            //     exclude: /node_modules/,
+            //     use: ['babel-loader']
+            // },
             {
-                test: /\.(js|jsx)$/,
+                test: /.jsx?$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
+                use: [
+                  {
+                    loader: 'babel-loader',
+                    // query: {
+                    //   presets: ['es2016', 'react']
+                    // },
+                  }
+                ]
             },
             {
                 test: /\.ttf$/,

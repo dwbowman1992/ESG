@@ -1,66 +1,66 @@
 {
-  "name": "esg",
-  "version": "1.1.0",
-  "description": "Embedded Sound GUI for Third Ear Project",
-  "main": "index.js",
-  "engines": {
-    "node": "9.5.0"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.15",
-    "@fortawesome/free-solid-svg-icons": "^5.7.2",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "axios": "^0.18.0",
-    "bootstrap": "^4.3.1",
-    "clean-webpack-plugin": "^2.0.1",
-    "core-js": "^2.6.5",
-    "express": "^4.16.4",
-    "history": "^4.7.2",
-    "html-webpack-plugin": "^3.2.0",
-    "path": "^0.12.7",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.3",
-    "react-bootstrap": "^1.0.0-beta.8",
-    "react-dom": "^16.8.3",
-    "react-redux": "^6.0.1",
-    "react-router-dom": "^4.3.1",
-    "react-router-redux": "^4.0.8",
-    "react-toastify": "^5.1.0",
-    "redux": "^4.0.1",
-    "redux-reset": "^0.3.0",
-    "redux-saga": "^1.0.1",
-    "redux-thunk": "^2.3.0",
-    "regenerator-runtime": "^0.13.1",
-    "style-loader": "^0.23.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.3.3",
-    "@babel/preset-env": "^7.4.3",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.5",
-    "babel-preset-minify": "^0.5.0",
-    "css-loader": "^2.1.0",
-    "file-loader": "^3.0.1",
-    "react-hot-loader": "^4.7.1",
-    "ttf-loader": "^1.0.2",
-    "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.2.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "heroku-postbuild": "webpack --config ./webpack.config.js --mode production",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dwbowman1992/ESG.git"
-  },
-  "author": "ThirdEar",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dwbowman1992/ESG/issues"
-  },
-  "homepage": "https://github.com/dwbowman1992/ESG#readme"
+    "name": "esg",
+    "version": "1.1.0",
+    "description": "Embedded Sound GUI for Third Ear Project",
+    "main": "index.js",
+    "engines": {
+        "node": "9.5.0"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.15",
+        "@fortawesome/free-solid-svg-icons": "^5.7.2",
+        "@fortawesome/react-fontawesome": "^0.1.4",
+        "axios": "^0.18.0",
+        "bootstrap": "^4.3.1",
+        "clean-webpack-plugin": "^2.0.1",
+        "core-js": "^2.6.5",
+        "express": "^4.16.4",
+        "history": "^4.7.2",
+        "html-webpack-plugin": "^3.2.0",
+        "path": "^0.12.7",
+        "prop-types": "^15.7.2",
+        "react": "^16.8.3",
+        "react-bootstrap": "^1.0.0-beta.8",
+        "react-dom": "^16.8.3",
+        "react-redux": "^6.0.1",
+        "react-router-dom": "^4.3.1",
+        "react-router-redux": "^4.0.8",
+        "react-toastify": "^5.1.0",
+        "redux": "^4.0.1",
+        "redux-reset": "^0.3.0",
+        "redux-saga": "^1.0.1",
+        "redux-thunk": "^2.3.0",
+        "regenerator-runtime": "^0.13.1",
+        "style-loader": "^0.23.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.3.3",
+        "@babel/preset-env": "^7.4.3",
+        "@babel/preset-react": "^7.0.0",
+        "babel-loader": "^8.0.5",
+        "babel-preset-minify": "^0.5.0",
+        "css-loader": "^2.1.0",
+        "file-loader": "^3.0.1",
+        "react-hot-loader": "^4.7.1",
+        "ttf-loader": "^1.0.2",
+        "webpack": "^4.29.5",
+        "webpack-cli": "^3.2.3",
+        "webpack-dev-server": "^3.2.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
+        "heroku-postbuild": "webpack --config ./webpack.config.js --mode production",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dwbowman1992/ESG.git"
+    },
+    "author": "ThirdEar",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/dwbowman1992/ESG/issues"
+    },
+    "homepage": "https://github.com/dwbowman1992/ESG#readme"
 }
