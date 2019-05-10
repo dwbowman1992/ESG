@@ -27,7 +27,7 @@ class Info extends React.Component {
                   Our motivation is derived from our group’s want to create a
                   product that helps locate sound in environments that would
                   have otherwise been hard to locate given the environmental
-                  circumstances.
+                  circumstances. 
                 </h6>
                 <h2>Problem Statement</h2>
                 <h6>
