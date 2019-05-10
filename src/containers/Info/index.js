@@ -6,29 +6,22 @@ import './styles.css';
 class Info extends React.Component {
     render() {
         return (
-          <div className="container col-sm-12">
+          <div className="container col-sm-12 fontColor">
             <div className="row">
-              <div className="col-sm-12 text-center text">
-                <h1 className="text">Infomation</h1>
+              <div className="col-sm-12 text-center">
+                <h1 className="pgHeader">Infomation</h1>
               </div>
             </div>
             <div className="row">
-              <div className="col-sm-12 text">
+              <div className="col-sm-12">
                 <h2>Product Overview</h2>
                 <h6>
-                  The OutSigned Alert System (OSAS) is a haptic feedback integrated
-                  system that monitors for select directional sounds and provides
-                  users with haptic directional indicators.
-                  The OutSigned Alert System is developed as a small form-factor,
-                  convenient, and efficient haptic feedback system. This device
-                  shall provide sufficient directional sound indication for users
-                  with hearing impairments, or in environments that may have otherwise
-                  hindered the user’s ability to locate and identify said sounds.
+                  The system defined in this report will increase safe vehicle operability through the use of sound localization and visual warning systems. This system is intended as a safety system for drivers. Current vehicle safety systems do not have the ability to locate external sounds. This system will be able to detect sounds according to their frequencies, localize them, and visually represent the expected source location. During the localization process, if a specific frequency is detected, the source location is identified and an indicator appears on a screen. This indicator will be displayed on a 360° span and placed in a way to show the localized direction to the operator. Device settings are malleable, where system settings such as target frequency and display information can be customized by the operator. Information collected by the system is stored in a local database and may be recovered in the event of an accident. The device is a safety warning system and adds another layer to safe vehicle operability. The sensitivity and accuracy of the system proves to be robust enough to locate sounds ranging from the human voice to emergency sirens.
                 </h6>
               </div>
             </div>
             <div className="row">
-              <div className="col-sm-12 text">
+              <div className="col-sm-12 ">
                 <h2>Our Motivation</h2>
                 <h6>
                   Our motivation is derived from our group’s want to create a
@@ -51,8 +44,8 @@ class Info extends React.Component {
               </div>
             </div>
             <div className="row">
-              <div className="col-sm-12 text"><h3>Issues?</h3></div>
-              <div className="col-sm-12 text">
+              <div className="col-sm-12 "><h3>Issues?</h3></div>
+              <div className="col-sm-12 ">
                 <h6>Email us at ThirdEarCo@gmail.com</h6>
               </div>
               <div className="col-sm-12 version">

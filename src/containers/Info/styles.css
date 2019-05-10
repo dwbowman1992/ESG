@@ -1,8 +1,14 @@
-.text {
-  color: #fff !important;
+
+.fontColor {
+  color: black;
+}
+
+.pgHeader {
+  margin-bottom: 30px;
 }
 
 .version {
   margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 12px;
 }

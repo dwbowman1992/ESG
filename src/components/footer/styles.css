@@ -4,7 +4,9 @@
 }
 
 .Nav {
+  height: 1px;
   position: relative;
+  margin-bottom: 50px;
 }
 
 .navBtn {

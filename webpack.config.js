@@ -11,23 +11,29 @@ module.exports = {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
-            // {
-            //     test: /\.(js|jsx)$/,
-            //     exclude: /node_modules/,
-            //     use: ['babel-loader']
-            // },
             {
-                test: /.jsx?$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: [
-                  {
-                    loader: 'babel-loader',
-                    // query: {
-                    //   presets: ['es2016', 'react']
-                    // },
-                  }
-                ]
+                use: ['babel-loader'],
+                // query: {
+                //   presets: [
+                //     '@babel/env',
+                //     '@babel/react'
+                //   ]
+                // },
             },
+            // {
+            //     test: /.jsx?$/,
+            //     exclude: /node_modules/,
+            //     use: [
+            //       {
+            //         loader: 'babel-loader',
+            //         // query: {
+            //         //   presets: ['es2016', 'react']
+            //         // },
+            //       }
+            //     ]
+            // },
             {
                 test: /\.ttf$/,
                 use: [

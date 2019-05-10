@@ -8,18 +8,23 @@ const GET_CONFIGURATION_REQUEST = "GET_CONFIGURATION_REQUEST";
 const GET_CONFIGURATION_SUCCESS = "GET_CONFIGURATION_SUCCESS";
 const GET_CONFIGURATION_FAILURE = "GET_CONFIGURATION_FAILURE";
 
+const POST_UPDATE_SETTINGS = "POST_UPDATE_SETTINGS";
+const UPDATE_SETTINGS_SUCCESS = "UPDATE_SETTINGS_SUCCESS";
+const UPDATE_SETTINGS_FAILURE = "UPDATE_SETTINGS_FAILURE";
+
 const GET_DIRECTION_REQUEST = "GET_DIRECTION_REQUEST";
 const GET_DIRECTION_SUCCESS = "GET_DIRECTION_SUCCESS";
 const GET_DIRECTION_FAILURE = "GET_DIRECTION_FAILURE";
 
-const GET_IS_DARK_MODE_REQUEST = "GET_DIRECTION_REQUEST";
-const GET_IS_DARK_MODE_SUCCESS = "GET_DIRECTION_SUCCESS";
-const GET_IS_DARK_MODE_FAILURE = "GET_DIRECTION_FAILURE";
+const GET_IS_DARK_MODE_REQUEST = "GET_IS_DARK_MODE_REQUEST";
+const GET_IS_DARK_MODE_SUCCESS = "GET_IS_DARK_MODE_SUCCESS";
+const GET_IS_DARK_MODE_FAILURE = "GET_IS_DARK_MODE_FAILURE";
+
 
 const initialState = {
     fetching: false,
     data: null,
-    error: null
+    error: null,
 };
 
 export function reducer(state = initialState, action) {
@@ -47,6 +52,12 @@ export function reducer(state = initialState, action) {
         case GET_IS_DARK_MODE_SUCCESS:
             return { ...state, fetching: false, data: action.data };
         case GET_IS_DARK_MODE_FAILURE:
+            return { ...state, fetching: false, data: null, error: action.error };
+        case POST_UPDATE_SETTINGS:
+          return { ...state, fetching: true, error: null, data: null} ;
+        case UPDATE_SETTINGS_SUCCESS:
+            return { ...state, fetching: false, data: action.data };
+        case UPDATE_SETTINGS_FAILURE:
             return { ...state, fetching: false, data: null, error: action.error };
         default:
             return state;
